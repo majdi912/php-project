@@ -225,15 +225,12 @@ class HostController extends AbstractController
     public function sendEmail(MailerInterface $mailer)
     {
         $email = (new Email())
-            ->from('fathitav44@gmail.com')
-            ->to('majdislimen14@gmail.com')
-            //->cc('cc@example.com')
-            //->bcc('bcc@example.com')
-            //->replyTo('fabien@example.com')
-            //->priority(Email::PRIORITY_HIGH)
+            ->from('cc@example.com')
+            ->to('cc@example.com')
+            
             ->subject('alert!')
-            ->text('ahla majdi')
-            ->html('<p>ahla majdi</p>');
+            ->text('message')
+            ->html('<p>message</p>');
 
         $mailer->send($email);
 

@@ -1,0 +1,19 @@
+{% extends 'base2.html.twig' %}
+{% block stylesheets %}
+           <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block body %}
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <h1>Host edit</h1>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_widget(form) }}
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Edit</button>
+            </div>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

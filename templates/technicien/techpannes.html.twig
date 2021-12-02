@@ -1,0 +1,43 @@
+{% extends 'base2.html.twig' %}
+{% block title %}List{% endblock %}
+{% block name %}Resultat de la recherche{% endblock %}
+{% block stylesheets %}
+           <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block body %}
+
+   <table class="table table-striped">
+  <thead>
+
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Host</th>
+      <th scope="col">Date_panne</th>
+      <th scope="col">Date_reparation</th>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Technicien</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in pannes %}
+    <tr>
+      <th scope="row">{{ p.id }}</th>
+      <td>{{ p.host.ip }}</td>
+      <td>{{ p.DatePanne.format('d/m/Y')}}</td>
+      <td>{{ p.DateReparation.format('d/m/Y')}}</td>
+      <td>{{ p.type }}</td>
+      <td>{{ p.description }}</td>
+      <td>{{ p.technicien.nom }}</td>
+
+    </tr>
+  {% endfor %}
+ </tbody>
+</table>
+    
+
+   
+ 
+{% endblock %}

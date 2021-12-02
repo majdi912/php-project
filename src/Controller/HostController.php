@@ -191,8 +191,8 @@ class HostController extends AbstractController
             }
 
             $email = (new Email())
-            ->from('fathitav44@gmail.com')
-            ->to('majdislimen14@gmail.com')
+            ->from('')
+            ->to('')
 
             ->subject('alert!')
             ->text('alert')
